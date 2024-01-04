@@ -1,0 +1,18 @@
+version: '3'
+services:
+  quiz:
+    image: nginx:latest  # Замените на образ для вашего приложения
+    volumes:
+      - ./quiz-app:/app  # Путь к вашим файлам викторин
+    restart: always
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./quiz-app:/usr/share/nginx/html  # Монтируем тот же том, что и для приложения
+      - ./nginx-config:/etc/nginx/conf.d  # Конфигурация Nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - quiz
+    restart: always
