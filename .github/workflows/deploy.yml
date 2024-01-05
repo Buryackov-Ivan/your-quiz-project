@@ -31,7 +31,6 @@ jobs:
         password: ${{ secrets.SERVER_PASSWORD }}
         source: "quiz-app/*"
         target: "/quiz-deployment/quiz-html"
-        port: 80
         
 
     - name: Reload Nginx
