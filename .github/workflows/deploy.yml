@@ -31,9 +31,7 @@ jobs:
         password: ${{ secrets.SERVER_PASSWORD }}
         source: "quiz-app/*"
         target: "/quiz-deployment/quiz-html"
-        port: 22
-        timeout: 600
-        command_timeout: 120
+        port: 80
         
 
     - name: Reload Nginx
