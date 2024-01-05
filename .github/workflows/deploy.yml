@@ -14,7 +14,8 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
+      uses: actions/aws@v2.0.1
+      # uses: actions/checkout@v2
 
     - name: Use Node.js 16
       uses: actions/setup-node@v3
