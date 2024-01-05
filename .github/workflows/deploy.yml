@@ -25,12 +25,14 @@ jobs:
     - name: Deploy to Server
       uses: appleboy/scp-action@master
       with:
-        host: ${{ secrets.SERVER_IP }}
-        username: ${{ secrets.SERVER_USERNAME }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        password: ${{ secrets.SERVER_PASSWORD }}
-        source: "quiz-app/*"
-        target: "/path/to/remote/directory/"
+        INPUT_HOST: ${{ secrets.SERVER_IP }}
+        INPUT_USERNAME: ${{ secrets.SERVER_USERNAME }}
+        INPUT_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        INPUT_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+        INPUT_SOURCE: "/*"
+        INPUT_TARGET: "/path/to/remote/directory/"
+        INPUT_PORT: "8080:80"
+        
 
     - name: Reload Nginx
       run: ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_IP }} 'sudo nginx -s reload'
