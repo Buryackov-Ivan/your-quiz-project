@@ -29,6 +29,7 @@ jobs:
         username: ${{ secrets.SERVER_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         password: ${{ secrets.SERVER_PASSWORD }}
+        port: 8080
         source: "quiz-app/*"
         target: "/quiz-deployment/quiz-html"
         
